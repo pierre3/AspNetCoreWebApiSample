@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-
+using AspNetCoreWebApiSample.Models;
+using Microsoft.EntityFrameworkCore;
 namespace AspNetCoreWebApiSample
 {
     public class Startup
@@ -27,8 +28,12 @@ namespace AspNetCoreWebApiSample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<TodoContext>(opt => opt.UseInMemoryDatabase());
+
             // Add framework services.
             services.AddMvc();
+
+            services.AddSingleton<ITodoRepository, TodoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
