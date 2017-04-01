@@ -16,7 +16,7 @@ namespace AspNetCoreWebApiSample.Controllers
         [HttpGet]
         public string Get()
         {
-            return $"{RuntimeInformation.OSDescription}, {RuntimeInformation.FrameworkDescription}";
+            return $"AspNetCoreWebApiSample: {RuntimeInformation.OSDescription}, {RuntimeInformation.FrameworkDescription}";
         }
 
         
