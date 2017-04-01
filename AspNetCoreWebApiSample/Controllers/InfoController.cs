@@ -16,7 +16,7 @@ namespace AspNetCoreWebApiSample.Controllers
         [HttpGet]
         public string Get()
         {
-            return $"Azure mokumoku: {RuntimeInformation.OSDescription}, {RuntimeInformation.FrameworkDescription}";
+            return $"AspNetCore Web API Sample: {RuntimeInformation.OSDescription}, {RuntimeInformation.FrameworkDescription}";
         }
 
         
